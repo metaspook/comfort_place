@@ -8,37 +8,78 @@ class ProductsPage extends StatelessWidget {
     //  final size = MediaQuery.of(context).;
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border), label: 'Favorite'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.message_outlined), label: 'Message'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline_rounded), label: 'Profile'),
-          ]),
-      body: Column(
-        children: [
-          ListTile(
-            leading: Image.asset('assets/images/user1.jpg'),
-            title: const Text(
-                'Post your requirements and get highly relevant\nmatches with your need.'),
-          ),
-          Container(
-            alignment: Alignment.center,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [
-                  Color(0xFFFCD1B7),
-                  Color(0xFFBFE0E8),
-                ],
-              ),
-            ),
-          ),
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.favorite_border), label: 'Favorite'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.message_outlined), label: 'Message'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline_rounded), label: 'Profile'),
         ],
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const ListTile(
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/user1.jpg'),
+                // radius: 50,
+              ),
+              title: Text('Hello Tsania'),
+              subtitle: Text('Baton Rouge (LA)'),
+              trailing: Icon(Icons.menu),
+            ),
+            ListView(
+              padding: const EdgeInsets.all(12),
+              shrinkWrap: true,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        padding: const EdgeInsets.all(12),
+                        alignment: Alignment.center,
+                        height: kToolbarHeight * .75,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade300,
+                          borderRadius: BorderRadius.circular(5),
+                          // gradient: LinearGradient(
+                          //   begin: Alignment.topRight,
+                          //   end: Alignment.bottomLeft,
+                          //   colors: [
+                          //     Color(0xFFFCD1B7),
+                          //     Color(0xFFBFE0E8),
+                          //   ],
+                          // ),
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.search,
+                              color: Colors.grey.shade600,
+                            ),
+                            const SizedBox(width: 5),
+                            Text(
+                              'Search here',
+                              style: TextStyle(
+                                color: Colors.grey.shade600,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    const Icon(Icons.more_rounded, size: 50),
+                    const SizedBox(width: 15),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
