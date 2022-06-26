@@ -76,6 +76,52 @@ class ProductsPage extends StatelessWidget {
                     const SizedBox(width: 15),
                   ],
                 ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 20,
+                        onPrimary: Colors.grey.shade600,
+                        primary: Theme.of(context).scaffoldBackgroundColor,
+                        shadowColor: Colors.grey.shade200,
+                      ),
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.house_outlined,
+                      ),
+                      label: const Text('House'),
+                    ),
+                    ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 20,
+                        onPrimary: Colors.grey.shade600,
+                        primary: Theme.of(context).scaffoldBackgroundColor,
+                        shadowColor: Colors.grey.shade200,
+                      ),
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.house_siding_sharp,
+                      ),
+                      label: const Text('Apartment'),
+                    ),
+                    ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        elevation: 20,
+                        onPrimary: Colors.grey.shade600,
+                        primary: Theme.of(context).scaffoldBackgroundColor,
+                        shadowColor: Colors.grey.shade200,
+                      ),
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.hotel,
+                      ),
+                      label: const Text('Hotel'),
+                    ),
+                    const SizedBox(width: 15),
+                  ],
+                ),
               ],
             ),
           ],
