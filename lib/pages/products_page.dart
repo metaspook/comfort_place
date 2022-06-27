@@ -1,3 +1,4 @@
+import 'package:comfort_place/widgets/product_slide.dart';
 import 'package:comfort_place/widgets/search_bar.dart';
 import 'package:comfort_place/widgets/tab_button_bar.dart';
 import 'package:flutter/material.dart';
@@ -47,22 +48,34 @@ class ProductsPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const TabButtonBar(),
+                const SizedBox(height: 15),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('Nearby Place'),
+                    const Text(
+                      'Nearby Place',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                    ),
                     // const Spacer(),
                     TextButton(
                       onPressed: () {},
                       child: Row(
                         children: const [
-                          Text('Baton Rouge (LA)'),
+                          Text(
+                            'View All',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 17.5),
+                          ),
                           SizedBox(width: 15),
                         ],
                       ),
                     ),
                   ],
                 ),
+                const ProductCarousel([
+                  'https://i.picsum.photos/id/244/200/300.jpg?hmac=wik1JUmLjSI1ujhC7YXckSJhpxTId-Ul5HF5mcALqC8'
+                ])
               ],
             ),
           ],

@@ -1,3 +1,4 @@
+import 'package:comfort_place/widgets/landing_background.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,48 +8,36 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     //  final size = MediaQuery.of(context).;
     return Scaffold(
-      body: Container(
-        alignment: Alignment.center,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xFFFCD1B7),
-              Color(0xFFBFE0E8),
-            ],
+      body: Stack(
+        children: [
+          const LandingBackground(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const SizedBox(height: kToolbarHeight),
+                Text(
+                  'Find your best\nComfort Place',
+                  style: Theme.of(context).textTheme.headline2!.copyWith(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black.withOpacity(.80),
+                      ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  'Post your requirements and get highly relevant\nmatches with your need.',
+                  textAlign: TextAlign.start,
+                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black.withOpacity(.80),
+                      ),
+                ),
+              ],
+            ),
           ),
-        ),
-        child: Column(
-          children: [
-            const SizedBox(height: kToolbarHeight),
-            Text(
-              'Find your best\nComfort Place',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline3,
-            ),
-            const Text(
-                'Post your requirements and get highly relevant\nmatches with your need.'),
-            Image.asset(
-              'assets/images/home_splash.png',
-              fit: BoxFit.cover,
-            ),
-          ],
-        ),
+        ],
       ),
-
-      // Column(
-      //   children: [
-      //     const SizedBox(height: kToolbarHeight),
-      //     Text(
-      //       'Find your best\nComfort Place',
-      //       textAlign: TextAlign.center,
-      //       style: Theme.of(context).textTheme.headline3,
-      //     ),
-      //     const Text(
-      //         'Post your requirements and get highly relevant\nmatches with your need.'),
-      //   ],
-      // ),
     );
   }
 }
