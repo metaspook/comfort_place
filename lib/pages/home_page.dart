@@ -1,4 +1,5 @@
-import 'package:comfort_place/widgets/landing_background.dart';
+import 'package:comfort_place/widgets/landing_auth_bar.dart';
+import 'package:comfort_place/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,27 +13,14 @@ class HomePage extends StatelessWidget {
         children: [
           const LandingBackground(),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+                horizontal: 20, vertical: kToolbarHeight),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const SizedBox(height: kToolbarHeight),
-                Text(
-                  'Find your best\nComfort Place',
-                  style: Theme.of(context).textTheme.headline2!.copyWith(
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black.withOpacity(.80),
-                      ),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  'Post your requirements and get highly relevant\nmatches with your need.',
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                        fontWeight: FontWeight.w400,
-                        color: Colors.black.withOpacity(.80),
-                      ),
-                ),
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                // SizedBox(height: kToolbarHeight),
+                LandingTitleBar(),
+                LandingAuthBar(),
               ],
             ),
           ),
