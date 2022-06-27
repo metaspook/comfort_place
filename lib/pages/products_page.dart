@@ -2,6 +2,7 @@ import 'package:comfort_place/widgets/product_slide.dart';
 import 'package:comfort_place/widgets/search_bar.dart';
 import 'package:comfort_place/widgets/tab_button_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({Key? key}) : super(key: key);
@@ -39,11 +40,20 @@ class ProductsPage extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 Row(
-                  children: const [
-                    Expanded(child: SearchBar()),
-                    SizedBox(width: 10),
-                    Icon(Icons.more_rounded, size: 50),
-                    SizedBox(width: 15),
+                  children: [
+                    const Expanded(child: SearchBar()),
+                    const SizedBox(width: 10),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(0xFF5D4229),
+                      ),
+                      padding: const EdgeInsets.all(7.5),
+                      child: Icon(FontAwesomeIcons.bars,
+                          size: 27.5,
+                          color: Theme.of(context).scaffoldBackgroundColor),
+                    ),
+                    const SizedBox(width: 15),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -73,6 +83,7 @@ class ProductsPage extends StatelessWidget {
                     ),
                   ],
                 ),
+                // Image.network('https://picsum.photos/200/300'),
                 const ProductCarousel([
                   'https://i.picsum.photos/id/244/200/300.jpg?hmac=wik1JUmLjSI1ujhC7YXckSJhpxTId-Ul5HF5mcALqC8'
                 ])
