@@ -14,7 +14,8 @@ class BottomNavController extends ChangeNotifier {
     "Profile": UserProfileView(),
   };
   int get currentIndex => _currentIndex;
-  Widget get currentView => _views.values.elementAt(_currentIndex);
+  Widget get currentView => _views.values
+      .elementAt(_currentIndex > 2 ? _currentIndex - 1 : _currentIndex);
   String get currentAppTitle => _views.keys.elementAt(_currentIndex);
 
   void setIndex(int index) {
