@@ -5,14 +5,40 @@ class UserAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ListTile(
-      leading: CircleAvatar(
+    return ListTile(
+      leading: const CircleAvatar(
         backgroundImage: AssetImage('assets/images/user1.jpg'),
         // radius: 50,
       ),
-      title: Text('Hello Tsania'),
-      subtitle: Text('Baton Rouge (LA)'),
-      trailing: Icon(Icons.menu),
+      title: const Text('Hello Tsania'),
+      subtitle: GestureDetector(
+        onTap: () {
+          print('user log menu pressed');
+        },
+        child: Row(
+          children: const [
+            Text(
+              'Baton Rouge (LA)',
+              style: TextStyle(color: Color(0xFF7BB3C6)),
+            ),
+            Icon(Icons.keyboard_arrow_down_rounded, color: Color(0xFF7BB3C6))
+          ],
+        ),
+      ),
+      trailing: PopupMenuButton(
+        icon: const Icon(
+          Icons.menu,
+          color: Colors.black87,
+        ),
+        itemBuilder: (context) => [
+          PopupMenuItem(
+            child: Text(
+              'Logout',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
