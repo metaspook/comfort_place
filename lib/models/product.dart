@@ -1,11 +1,11 @@
-class DetailImage {
+class Product {
   final int id;
   final String name;
   final String rating;
   final String description;
   final String imageUrl;
 
-  DetailImage({
+  Product({
     required this.id,
     required this.name,
     required this.rating,
@@ -14,8 +14,8 @@ class DetailImage {
   });
 
   // create model object from json object.
-  factory DetailImage.fromJson(Map<String, dynamic> json) {
-    return DetailImage(
+  factory Product.fromJson(Map<String, dynamic> json) {
+    return Product(
       id: json["id"],
       name: json["name"],
       rating: json["rating"],

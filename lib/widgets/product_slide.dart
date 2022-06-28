@@ -1,23 +1,24 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:comfort_place/models/product.dart';
 import 'package:flutter/material.dart';
 
 class ProductCarousel extends StatelessWidget {
-  const ProductCarousel(this.imagePaths, {Key? key}) : super(key: key);
-  final List<String> imagePaths;
+  const ProductCarousel(this.detailImages, {Key? key}) : super(key: key);
+  final List<Product> detailImages;
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> imageSlides = imagePaths
+    final List<Widget> imageSlides = detailImages
         .map(
           (item) => Container(
             margin: const EdgeInsets.all(5.0),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(20),
               child: CachedNetworkImage(
                 fit: BoxFit.cover,
                 width: 250,
-                imageUrl: 'https://i.picsum.photos/id/244/200/300.jpg',
+                imageUrl: item.imageUrl,
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     CircularProgressIndicator.adaptive(
                         value: downloadProgress.progress),
@@ -30,10 +31,11 @@ class ProductCarousel extends StatelessWidget {
 
     return CarouselSlider(
       options: CarouselOptions(
-        viewportFraction: .65,
-        aspectRatio: 1.5,
-        enlargeCenterPage: true,
-        enableInfiniteScroll: true,
+        viewportFraction: .715,
+        aspectRatio: 1,
+        // enlargeCenterPage: true,
+        // disableCenter: true,
+        enableInfiniteScroll: false,
         // initialPage: imagePaths.indexWhere((element) => element.isPrimary),
       ),
       items: imageSlides,
