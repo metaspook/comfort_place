@@ -21,6 +21,13 @@ migrate_working_dir/
 # is commented out by default.
 #.vscode/
 
+# Keystore related
+key.properties
+
+# Firebase related
+google-services.json
+GoogleService-Info.plist
+
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
