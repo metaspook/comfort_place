@@ -10,42 +10,16 @@ class NearbyPlaceBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              'Nearby Place',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
-            ),
-            // const Spacer(),
-            TextButton(
-              onPressed: () {},
-              child: Row(
-                children: const [
-                  Text(
-                    'View All',
-                    style:
-                        TextStyle(fontWeight: FontWeight.w500, fontSize: 17.5),
-                  ),
-                  SizedBox(width: 15),
-                ],
-              ),
-            ),
-          ],
-        ),
         FutureBuilder<List<Product>>(
           future: DataService().fetchProducts(),
           // initialData: InitialData,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              print(snapshot.data!.first.id);
-              // return ProductCarousel(snapshot.data!);
               return LimitedBox(
                 maxHeight: 400,
                 // maxWidth: 200,
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
-                  // itemExtent: 50,
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   itemCount: snapshot.data!.length,

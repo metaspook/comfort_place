@@ -15,7 +15,7 @@ class SearchBar extends StatelessWidget {
             height: kToolbarHeight * .75,
             decoration: BoxDecoration(
               color: Colors.grey.shade300,
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
             ),
             child: Row(
               children: [
@@ -37,7 +37,7 @@ class SearchBar extends StatelessWidget {
         const SizedBox(width: 10),
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(7.5),
             color: const Color(0xFF5D4229),
           ),
           padding: const EdgeInsets.all(7.5),
