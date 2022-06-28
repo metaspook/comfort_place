@@ -13,19 +13,14 @@ class UserAppBar extends StatelessWidget {
         // radius: 50,
       ),
       title: const Text('Hello Tsania'),
-      subtitle: GestureDetector(
-        onTap: () {
-          print('user log menu pressed');
-        },
-        child: Row(
-          children: const [
-            Text(
-              'Baton Rouge (LA)',
-              style: TextStyle(color: Color(0xFF7BB3C6)),
-            ),
-            Icon(Icons.keyboard_arrow_down_rounded, color: Color(0xFF7BB3C6))
-          ],
-        ),
+      subtitle: Row(
+        children: const [
+          Text(
+            'Baton Rouge (LA)',
+            style: TextStyle(color: Color(0xFF7BB3C6)),
+          ),
+          Icon(Icons.keyboard_arrow_down_rounded, color: Color(0xFF7BB3C6))
+        ],
       ),
       trailing: PopupMenuButton(
         icon: const Icon(

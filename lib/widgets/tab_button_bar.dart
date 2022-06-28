@@ -34,15 +34,15 @@ class TabButtonBar extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7.5),
             ),
-            elevation: 20,
-            onPrimary: Colors.grey.shade600,
+            elevation: 10,
+            onPrimary: Colors.grey.shade400,
             primary: Theme.of(context).scaffoldBackgroundColor,
-            shadowColor: Colors.black54,
+            shadowColor: Colors.black26,
           ),
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             FontAwesomeIcons.building,
-            color: Colors.blue,
+            color: Colors.blue.withOpacity(.5),
             size: 15,
           ),
           label: const Text('Apartment'),
@@ -53,15 +53,15 @@ class TabButtonBar extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7.5),
             ),
-            elevation: 20,
-            onPrimary: Colors.grey.shade600,
+            elevation: 10,
+            onPrimary: Colors.grey.shade400,
             primary: Theme.of(context).scaffoldBackgroundColor,
-            shadowColor: Colors.black54,
+            shadowColor: Colors.black26,
           ),
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             FontAwesomeIcons.hotel,
-            color: Colors.pink,
+            color: Colors.pink.withOpacity(.5),
             size: 15,
           ),
           label: const Text('Hotel'),

@@ -8,15 +8,11 @@ class Providers {
   factory Providers() => Providers._();
 
   final userProviders = [
-    // ChangeNotifierProvider(create: (_) => BottomNavController()),
-    ChangeNotifierProvider(create: (_) => AuthController()),
-    // ChangeNotifierProvider(create: (_) => SearchController()),
-    // StreamProvider<User?>.value(
-    //   value: FirebaseAuth.instance.authStateChanges(),
-    //   initialData: null,
-    //   catchError: (context, object) {
-    //     throw (object.toString());
-    //   },
-    // ),
+    ChangeNotifierProvider<AuthController>(
+      create: (context) => AuthController(),
+    ),
+    ChangeNotifierProvider<BottomNavController>(
+      create: (context) => BottomNavController(),
+    ),
   ];
 }

@@ -1,4 +1,6 @@
+import 'package:comfort_place/controllers/controllers.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({Key? key}) : super(key: key);
@@ -6,15 +8,27 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      currentIndex: context.watch<BottomNavController>().currentIndex,
+      onTap: (newIndex) =>
+          context.read<BottomNavController>().setIndex(newIndex),
       type: BottomNavigationBarType.fixed,
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border), label: 'Favorite'),
+          label: 'Home',
+          icon: Icon(Icons.home),
+        ),
         BottomNavigationBarItem(
-            icon: Icon(Icons.message_outlined), label: 'Message'),
+          label: 'Favorite',
+          icon: Icon(Icons.favorite_border),
+        ),
         BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline_rounded), label: 'Profile'),
+          label: 'Message',
+          icon: Icon(Icons.message_outlined),
+        ),
+        BottomNavigationBarItem(
+          label: 'Profile',
+          icon: Icon(Icons.person_outline_rounded),
+        ),
       ],
     );
   }
