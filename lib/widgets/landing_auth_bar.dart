@@ -1,16 +1,19 @@
+import 'package:comfort_place/controllers/controllers.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class LandingAuthBar extends StatelessWidget {
   const LandingAuthBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // final isSignedIn = context.watch<AuthController>().isSignedIn;
     return Column(
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () => context.read<AuthController>().signedIn(),
           style: ElevatedButton.styleFrom(
             primary: Theme.of(context).scaffoldBackgroundColor,
             padding: const EdgeInsets.symmetric(vertical: 15),

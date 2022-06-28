@@ -1,4 +1,6 @@
+import 'package:comfort_place/controllers/controllers.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class UserAppBar extends StatelessWidget {
   const UserAppBar({Key? key}) : super(key: key);
@@ -32,6 +34,7 @@ class UserAppBar extends StatelessWidget {
         ),
         itemBuilder: (context) => [
           PopupMenuItem(
+            onTap: () => context.read<AuthController>().signedOut(),
             child: Text(
               'Logout',
               style: Theme.of(context).textTheme.headline6,
