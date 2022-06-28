@@ -1,16 +1,25 @@
-# comfort_place
+# Comfort Place 🏪
+A comfort place finder app.
 
-A new Flutter project.
+><b>Platforms:</b> Android, iOS, Web<br><b>Language/SDK:</b> Dart, Flutter
 
-## Getting Started
+## **🎈 Screenshots**
+<img alt="&nbsp;Missing screenshot!" src="screenshots/Screenshot_01.jpg" width="204" height="430">&emsp;
+<img alt="&nbsp;Missing screenshot!" src="screenshots/Screenshot_02.jpg" width="204" height="430">&emsp;
+<img alt="&nbsp;Missing screenshot!" src="screenshots/Screenshot_03.jpg" width="204" height="430">&emsp;
+<img alt="&nbsp;Missing screenshot!" src="screenshots/Screenshot_04.jpg" width="204" height="430"><br>
 
-This project is a starting point for a Flutter application.
+## **🎈 Features**
+- Landing page with functional sign-in button.
+- User page with functional sign-out button (at top right menu).
+- Functional Bottom navigation buttons with additional 3 dummy page views.
+- Product carousal slider with API data (Images, Ratings etc.).
+- Used BounceScrollingPhysics in carousel slider and main list view.
+- State Management: Provider
+- Architecture: MVC+S
 
-A few resources to get you started if this is your first Flutter project:
+## **🎈 Remarks**
+<details><summary>Click to collapse/fold.</summary>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Packages: provider, cached_network_image, font_awesome_flutter.
+</details>
