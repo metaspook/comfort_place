@@ -11,95 +11,29 @@ class ProductsPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         //  main column.
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const UserAppBar(),
-            const SizedBox(height: 10),
-            const UserSearchBar(),
-            const SizedBox(height: 10),
-            const TabButtonBar(),
-            const SizedBox(height: 15),
-            Expanded(
-              child: ListView(
-                shrinkWrap: true, // 1st add
-                physics: const BouncingScrollPhysics(),
-                children: const [
-                  NearbyPlaceBar(),
-                  NearbyPlaceBar(),
-                ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const UserAppBar(),
+              const SizedBox(height: 10),
+              const SearchBar(),
+              const SizedBox(height: 10),
+              const TabButtonBar(),
+              const SizedBox(height: 15),
+              Expanded(
+                child: ListView(
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
+                  children: const [
+                    NearbyPlaceBar(),
+                    NearbyPlaceBar(),
+                  ],
+                ),
               ),
-            ),
-            // FutureBuilder<List<Product>>(
-            //   future: fetchProducts(),
-            //   // initialData: InitialData,
-            //   builder: (context, snapshot) {
-            //     if (snapshot.hasData) {
-            //       print(snapshot.data!.first.id);
-            //       // return ProductCarousel(snapshot.data!);
-            //       return Expanded(
-            //         child: ListView.builder(
-            //           physics: const BouncingScrollPhysics(),
-            //           // itemExtent: 50,
-            //           scrollDirection: Axis.horizontal,
-            //           shrinkWrap: true,
-            //           itemCount: snapshot.data!.length,
-            //           itemBuilder: (context, index) {
-            //             return Padding(
-            //               padding: const EdgeInsets.all(8.0),
-            //               child: ClipRRect(
-            //                 borderRadius: BorderRadius.circular(15),
-            //                 child: CachedNetworkImage(
-            //                     fit: BoxFit.cover,
-            //                     height: 100,
-            //                     width: 200,
-            //                     imageUrl: snapshot.data![index].imageUrl),
-            //               ),
-            //             );
-            //           },
-            //         ),
-            //       );
-            //     }
-
-            //     return const CircularProgressIndicator();
-            //   },
-            // ),
-            // FutureBuilder<List<Product>>(
-            //   future: fetchProducts(),
-            //   // initialData: InitialData,
-            //   builder: (context, snapshot) {
-            //     if (snapshot.hasData) {
-            //       print(snapshot.data!.first.id);
-            //       // return ProductCarousel(snapshot.data!);
-            //       return Expanded(
-            //         child: ListView.builder(
-            //           physics: const BouncingScrollPhysics(),
-            //           // itemExtent: 50,
-            //           scrollDirection: Axis.horizontal,
-            //           shrinkWrap: true,
-            //           itemCount: snapshot.data!.length,
-            //           itemBuilder: (context, index) {
-            //             return Padding(
-            //               padding: const EdgeInsets.all(8.0),
-            //               child: ClipRRect(
-            //                 borderRadius: BorderRadius.circular(15),
-            //                 child: CachedNetworkImage(
-            //                     fit: BoxFit.cover,
-            //                     height: 100,
-            //                     width: 200,
-            //                     imageUrl: snapshot.data![index].imageUrl),
-            //               ),
-            //             );
-            //           },
-            //         ),
-            //       );
-            //     }
-
-            //     return const CircularProgressIndicator();
-            //   },
-            // ),
-            // const SizedBox(height: 100),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(

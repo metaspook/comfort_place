@@ -1,6 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:comfort_place/models/models.dart';
 import 'package:comfort_place/services/data_service.dart';
+import 'package:comfort_place/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class NearbyPlaceBar extends StatelessWidget {
@@ -41,8 +41,8 @@ class NearbyPlaceBar extends StatelessWidget {
               print(snapshot.data!.first.id);
               // return ProductCarousel(snapshot.data!);
               return LimitedBox(
-                maxHeight: 300,
-                maxWidth: 300,
+                maxHeight: 400,
+                // maxWidth: 200,
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   // itemExtent: 50,
@@ -52,14 +52,7 @@ class NearbyPlaceBar extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: CachedNetworkImage(
-                            fit: BoxFit.cover,
-                            height: 300,
-                            width: 200,
-                            imageUrl: snapshot.data![index].imageUrl),
-                      ),
+                      child: ProductCard(snapshot.data![index]),
                     );
                   },
                 ),
